@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | JTMS Manpower & Security Services</title>
+  <link rel="icon" href="./uploads/logo/jtms-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070a14;
+      --card-bg: #0d1527;
+      --card-border: #1a2948;
+      --gold: #fbb616;
+      --gold-hover: #e09f0d;
+      --navy-light: #162444;
+      --text-white: #ffffff;
+      --text-muted: #8c9cb8;
+      --green: #10b981;
+      --blue: #3b82f6;
+      --red: #ef4444;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation */
+    .admin-nav {
+      background: #09101f;
+      border-bottom: 1px solid var(--card-border);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+    }
+    .brand-text h1 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    .brand-text p {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: #070a14;
+    }
+    .btn-gold:hover {
+      background: var(--gold-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: #fff;
+    }
+    .btn-outline:hover {
+      background: var(--navy-light);
+      border-color: var(--gold);
+    }
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid var(--red);
+      color: #fca5a5;
+    }
+    .btn-danger:hover {
+      background: var(--red);
+      color: #fff;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px;
+      flex: 1;
+    }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .kpi-info h3 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .kpi-info p {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .kpi-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .icon-gold { background: rgba(251, 182, 22, 0.15); color: var(--gold); }
+    .icon-green { background: rgba(16, 185, 129, 0.15); color: var(--green); }
+    .icon-blue { background: rgba(59, 130, 246, 0.15); color: var(--blue); }
+    .icon-red { background: rgba(239, 68, 68, 0.15); color: var(--red); }
+
+    /* Control Bar */
+    .control-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .search-filter {
+      display: flex;
+      gap: 10px;
+      flex: 1;
+      max-width: 600px;
+    }
+    .search-input {
+      flex: 1;
+      background: #080d19;
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 9px 14px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--gold);
+    }
+    .status-select {
+      background: #080d19;
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 9px 12px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Leads Table */
+    .table-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      background: #091122;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #13203c;
+      font-size: 13px;
+      color: #cbd5e1;
+      vertical-align: middle;
+    }
+    tr:hover td {
+      background: rgba(251, 182, 22, 0.02);
+    }
+    .lead-name {
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      font-size: 14px;
+    }
+    .lead-time {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .phone-tag {
+      font-family: monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .contact-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .call-btn, .wa-btn {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .call-btn {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .call-btn:hover {
+      background: #3b82f6;
+      color: #fff;
+    }
+    .wa-btn {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .wa-btn:hover {
+      background: #10b981;
+      color: #fff;
+    }
+    .badge-status {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .status-New { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .status-Contacted { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .status-InProgress { background: rgba(251, 182, 22, 0.2); color: #fde047; border: 1px solid rgba(251, 182, 22, 0.4); }
+    .status-Closed { background: rgba(16, 185, 129, 0.2); color: #86efac; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+    .del-btn {
+      background: transparent;
+      border: 1px solid #334155;
+      color: #94a3b8;
+      border-radius: 4px;
+      padding: 5px 8px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+    .del-btn:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+    .empty-state svg {
+      width: 56px;
+      height: 56px;
+      stroke: var(--card-border);
+      margin-bottom: 12px;
+    }
+    .empty-state h4 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    /* Login Modal */
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 8, 16, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .login-box {
+      background: var(--card-bg);
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      padding: 36px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    }
+    .login-box img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      margin-bottom: 14px;
+    }
+    .login-box h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .login-box p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .login-input {
+      width: 100%;
+      background: #060b16;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 16px;
+      outline: none;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .login-input:focus {
+      border-color: var(--gold);
+    }
+    .login-error {
+      color: var(--red);
+      font-size: 12px;
+      margin-bottom: 12px;
+      display: none;
+    }
+
+    /* Audio alert pulse */
+    .live-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green);
+      margin-right: 6px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Password Login Overlay -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-box">
+      <img src="./uploads/logo/jtms-logo.jpg" alt="JTMS Logo">
+      <h2>JTMS Admin Portal</h2>
+      <p>Enter Master Password to access inquiries</p>
+      <input type="password" id="adminPassword" class="login-input" placeholder="Password (Default: admin123)" autofocus>
+      <div id="loginError" class="login-error">Incorrect password. Please try again.</div>
+      <button onclick="handleLogin()" class="btn btn-gold" style="width: 100%; justify-content: center; padding: 12px;">Login to Dashboard</button>
+      <small style="display:block; margin-top: 14px; color: #64748b; font-size: 11px;">Default Password: <strong>admin123</strong></small>
+    </div>
+  </div>
+
+  <!-- Admin Navigation -->
+  <header class="admin-nav">
+    <a href="./" class="brand-wrap">
+      <img src="./uploads/logo/jtms-logo.jpg" alt="JTMS Logo" class="brand-logo">
+      <div class="brand-text">
+        <h1>JTMS INDIA</h1>
+        <p>Admin Portal &amp; Lead Manager</p>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <span style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center;">
+        <span class="live-pulse"></span> Live Sync
+      </span>
+      <a href="./" class="btn btn-outline" target="_blank">🌐 View Website</a>
+      <button onclick="logoutAdmin()" class="btn btn-outline">Logout</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- KPI Counters -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-info">
+          <h3 id="countTotal">0</h3>
+          <p>Total Inquiries</p>
+        </div>
+        <div class="kpi-icon icon-gold">📋</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-info">
+          <h3 id="countNew">0</h3>
+          <p>New / Pending</p>
+        </div>
+        <div class="kpi-icon icon-red">🆕</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-info">
+          <h3 id="countContacted">0</h3>
+          <p>Contacted</p>
+        </div>
+        <div class="kpi-icon icon-blue">📞</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-info">
+          <h3 id="countToday">0</h3>
+          <p>Today's Leads</p>
+        </div>
+        <div class="kpi-icon icon-green">📅</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="control-bar">
+      <div class="search-filter">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by customer name, phone, area..." oninput="renderTable()">
+        <select id="statusFilter" class="status-select" onchange="renderTable()">
+          <option value="ALL">All Statuses</option>
+          <option value="New">New</option>
+          <option value="Contacted">Contacted</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Closed">Closed</option>
+        </select>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button onclick="addManualLeadModal()" class="btn btn-outline">+ Add Lead</button>
+        <button onclick="exportToCSV()" class="btn btn-gold">📥 Export CSV</button>
+        <button onclick="clearAllInquiries()" class="btn btn-danger">Clear All</button>
+      </div>
+    </div>
+
+    <!-- Leads Table -->
+    <div class="table-card">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Date / Time</th>
+              <th>Customer Details</th>
+              <th>Contact Action</th>
+              <th>Service Required</th>
+              <th>Area / Details</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="leadsTbody">
+            <!-- Dynamic rows -->
+          </tbody>
+        </table>
+      </div>
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+        </svg>
+        <h4>No Customer Inquiries Yet</h4>
+        <p>When visitors submit any form on your website, their details appear here in real-time.</p>
+        <button onclick="seedTestInquiry()" class="btn btn-gold" style="margin-top: 14px;">+ Add Test Customer Lead</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Auth Check
+    function checkAuth() {
+      if (sessionStorage.getItem('jtms_admin_auth') === 'true') {
+        document.getElementById('loginOverlay').style.display = 'none';
+        renderTable();
+      } else {
+        document.getElementById('loginOverlay').style.display = 'flex';
+      }
+    }
+
+    function handleLogin() {
+      const pass = document.getElementById('adminPassword').value.trim();
+      if (pass === 'admin123' || pass === 'jtms2026' || pass === '9964441472') {
+        sessionStorage.setItem('jtms_admin_auth', 'true');
+        document.getElementById('loginOverlay').style.display = 'none';
+        document.getElementById('loginError').style.display = 'none';
+        renderTable();
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    }
+
+    function logoutAdmin() {
+      sessionStorage.removeItem('jtms_admin_auth');
+      location.reload();
+    }
+
+    document.getElementById('adminPassword').addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') handleLogin();
+    });
+
+    // Data handling
+    function getInquiries() {
+      try {
+        return JSON.parse(localStorage.getItem('jtms_inquiries') || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveInquiries(list) {
+      localStorage.setItem('jtms_inquiries', JSON.stringify(list));
+      renderTable();
+    }
+
+    function renderTable() {
+      const list = getInquiries();
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const statusF = document.getElementById('statusFilter').value;
+
+      // Update KPI counters
+      document.getElementById('countTotal').innerText = list.length;
+      document.getElementById('countNew').innerText = list.filter(i => (i.status || 'New') === 'New').length;
+      document.getElementById('countContacted').innerText = list.filter(i => i.status === 'Contacted').length;
+
+      const todayStr = new Date().toLocaleDateString('en-IN');
+      document.getElementById('countToday').innerText = list.filter(i => {
+        return (i.date || '').includes(todayStr) || (i.createdAt && new Date(i.createdAt).toLocaleDateString('en-IN') === todayStr);
+      }).length;
+
+      const filtered = list.filter(item => {
+        const matchesQuery = !q ||
+          (item.name && item.name.toLowerCase().includes(q)) ||
+          (item.phone && item.phone.toLowerCase().includes(q)) ||
+          (item.service && item.service.toLowerCase().includes(q)) ||
+          (item.area && item.area.toLowerCase().includes(q));
+
+        const matchesStatus = statusF === 'ALL' || (item.status || 'New') === statusF;
+        return matchesQuery && matchesStatus;
+      });
+
+      const tbody = document.getElementById('leadsTbody');
+      const emptyState = document.getElementById('emptyState');
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      tbody.innerHTML = filtered.map(item => {
+        const st = item.status || 'New';
+        const stClass = st.replace(/\s+/g, '');
+        const cleanPhone = (item.phone || '').replace(/[^0-9]/g, '');
+        const formattedPhone = cleanPhone.length === 10 ? '+91 ' + cleanPhone : item.phone;
+        const waMsg = encodeURIComponent("Hello " + (item.name || '') + ", Greetings from JTMS Manpower & Security Services Pvt. Ltd. We received your inquiry regarding " + (item.service || 'Security Services') + ". How can we assist you today?");
+
+        return `
+          <tr>
+            <td>
+              <div class="lead-time">${item.date || new Date(item.id).toLocaleString('en-IN')}</div>
+              <small style="color:#64748b; font-size:10px;">${item.form || 'Web Form'}</small>
+            </td>
+            <td>
+              <span class="lead-name">${item.name || 'Anonymous Customer'}</span>
+              ${item.email ? `<small style="color:#94a3b8;">${item.email}</small>` : ''}
+            </td>
+            <td>
+              <div class="phone-tag">${formattedPhone || 'No Phone'}</div>
+              ${cleanPhone ? `
+                <div class="contact-actions">
+                  <a href="tel:${cleanPhone}" class="call-btn">📞 Call</a>
+                  <a href="https://wa.me/91${cleanPhone}?text=${waMsg}" target="_blank" class="wa-btn">💬 WhatsApp</a>
+                </div>
+              ` : ''}
+            </td>
+            <td>
+              <strong style="color:var(--gold);">${item.service || 'Security Services'}</strong>
+            </td>
+            <td>
+              <span style="color:#cbd5e1;">${item.area || item.fields?.message || 'Bangalore'}</span>
+            </td>
+            <td>
+              <select onchange="updateStatus(${item.id}, this.value)" class="badge-status status-${stClass}">
+                <option value="New" ${st === 'New' ? 'selected' : ''}>New</option>
+                <option value="Contacted" ${st === 'Contacted' ? 'selected' : ''}>Contacted</option>
+                <option value="In Progress" ${st === 'In Progress' ? 'selected' : ''}>In Progress</option>
+                <option value="Closed" ${st === 'Closed' ? 'selected' : ''}>Closed</option>
+              </select>
+            </td>
+            <td>
+              <button onclick="deleteLead(${item.id})" class="del-btn" title="Delete Inquiry">🗑️</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function updateStatus(id, newStatus) {
+      const list = getInquiries();
+      const item = list.find(i => i.id === id);
+      if (item) {
+        item.status = newStatus;
+        saveInquiries(list);
+      }
+    }
+
+    function deleteLead(id) {
+      if (confirm('Are you sure you want to delete this customer inquiry?')) {
+        let list = getInquiries();
+        list = list.filter(i => i.id !== id);
+        saveInquiries(list);
+      }
+    }
+
+    function clearAllInquiries() {
+      if (confirm('Warning: This will delete ALL customer inquiries from this device. Are you sure?')) {
+        saveInquiries([]);
+      }
+    }
+
+    function exportToCSV() {
+      const list = getInquiries();
+      if (list.length === 0) {
+        alert('No leads to export!');
+        return;
+      }
+      let csv = 'ID,Date,Customer Name,Phone,Email,Service,Area / Message,Status\n';
+      list.forEach(i => {
+        const row = [
+          i.id,
+          `"${i.date || ''}"`,
+          `"${(i.name || '').replace(/"/g, '""')}"`,
+          `"${i.phone || ''}"`,
+          `"${i.email || ''}"`,
+          `"${(i.service || '').replace(/"/g, '""')}"`,
+          `"${(i.area || '').replace(/"/g, '""')}"`,
+          `"${i.status || 'New'}"`
+        ];
+        csv += row.join(',') + '\n';
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `JTMS_Customer_Leads_${new Date().toISOString().slice(0,10)}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function seedTestInquiry() {
+      const sample = {
+        id: Date.now(),
+        form: 'Quick Enquiry',
+        name: 'Rajesh Kumar (Sample Lead)',
+        phone: '9964441472',
+        email: 'rajesh.sample@gmail.com',
+        service: 'Apartment Security Guards',
+        area: 'Kanakapura Road / Raghuvanahalli, Bangalore',
+        date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        status: 'New'
+      };
+      const list = getInquiries();
+      list.unshift(sample);
+      saveInquiries(list);
+    }
+
+    function addManualLeadModal() {
+      const name = prompt('Customer Name:');
+      if (!name) return;
+      const phone = prompt('Customer Mobile Number:');
+      const service = prompt('Service (e.g. Security / Housekeeping / Manpower):', 'Security Services');
+      const area = prompt('Area / Location in Bangalore:', 'Bangalore');
+
+      const item = {
+        id: Date.now(),
+        form: 'Manual Entry (Phone Call)',
+        name: name,
+        phone: phone || '',
+        email: '',
+        service: service || 'Security Services',
+        area: area || 'Bangalore',
+        date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        status: 'New'
+      };
+      const list = getInquiries();
+      list.unshift(item);
+      saveInquiries(list);
+    }
+
+    // Auto-refresh when new inquiry arrives
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'jtms_inquiries') renderTable();
+    });
+    window.addEventListener('jtms:new_inquiry', () => {
+      renderTable();
+    });
+
+    setInterval(() => {
+      if (sessionStorage.getItem('jtms_admin_auth') === 'true') {
+        renderTable();
+      }
+    }, 4000);
+
+    // Initial check
+    checkAuth();
+  </script>
+</body>
+</html>
