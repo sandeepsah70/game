@@ -1,0 +1,88 @@
+﻿/* A5 note: verbatim legacy CSS; only change = url(../img/x.png) rewritten to /uploads/legacy/*.webp (media manifest). */
+/* Corporate Security Guards page â€” scales with the shared --u unit (1 design px = 100vw / 1670) */
+.csg-svc,.csg-why,.csg-proc,.csg-cta{position:relative;width:100%;overflow:hidden;color:#fff}
+.csg-gold{color:#f7b81f}
+/* hero: full banner image (2171x724), shown uncropped with its gold side lines */
+.hero.pg-csg{height:calc(var(--u)*171 + var(--v)*557);background:#0a0f14;overflow:hidden}
+.hero.pg-csg::after{content:"";position:absolute;left:0;right:0;top:calc(var(--u)*171);bottom:0;z-index:0;background:url("../uploads/legacy/corporate%20security%20guards/Security%20Team%20at%20Sunset%20Entrance.webp") 0 0/100% 100% no-repeat}
+.hero.pg-csg>.navbar,.hero.pg-csg>[class*="topbar"]{position:relative;z-index:5}
+.csg-ttl{position:absolute;left:calc(var(--u)*150);top:calc(var(--u)*171 + var(--v)*120);z-index:3}
+.csg-dash{display:block;width:calc(var(--u)*78);height:calc(var(--v)*7);background:#f7b81f;margin-bottom:calc(var(--u)*24)}
+.csg-ttl h1{margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:calc(var(--u)*64);line-height:calc(var(--v)*74);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.csg-ttl h1 em{font-style:normal;color:#f7b81f}
+.csg-ttl p{margin:calc(var(--v)*14) 0 0;font:500 calc(var(--u)*17)/1.3 'Plus Jakarta Sans',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#fff}
+
+/* section headings */
+.csg-head{position:relative;z-index:2;text-align:center;padding-top:calc(var(--u)*40)}
+.csg-shield{display:flex;align-items:center;justify-content:center;gap:calc(var(--u)*22)}
+.csg-shield svg{width:calc(var(--u)*52);height:calc(var(--v)*52);fill:none;stroke:#f7b81f;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.csg-ln{display:block;width:calc(var(--u)*150);height:2px;background:linear-gradient(90deg,transparent,#f7b81f)}
+.csg-ln+svg+.csg-ln{background:linear-gradient(90deg,#f7b81f,transparent)}
+.csg-head h2{margin:calc(var(--v)*10) 0 0;font-family:'Poppins',sans-serif;font-weight:700;font-size:calc(var(--u)*46);line-height:1.2;color:#fff;letter-spacing:.01em}
+.csg-head h2 em{font-style:normal;color:#f7b81f}
+.csg-uline{display:block;width:calc(var(--u)*86);height:3px;margin:calc(var(--v)*14) auto 0;background:#f7b81f;border-radius:2px}
+.csg-uline-glow{width:calc(var(--u)*130);background:linear-gradient(90deg,transparent,#f7b81f 30%,#f7b81f 70%,transparent);box-shadow:0 0 12px rgba(247,184,31,.7)}
+.csg-head-plain{padding-top:calc(var(--u)*60)}
+.csg-head-plain h2{font-size:calc(var(--u)*50);margin-top:0}
+
+/* corporate security services */
+.csg-svc{background:#05080e url("../uploads/legacy/corporate%20security%20guards/Cinematic%20Corporate%20Security%20Nightscape.webp") 0 0/100% 100% no-repeat;min-height:calc(var(--u)*557);padding-bottom:calc(var(--u)*60)}
+.csg-cards{position:relative;z-index:2;display:grid;grid-template-columns:repeat(2,calc(var(--u)*640));gap:calc(var(--v)*28) calc(var(--u)*26);justify-content:center;align-items:stretch;margin-top:calc(var(--u)*38)}
+.csg-card{display:flex;align-items:center;gap:calc(var(--u)*26);padding:calc(var(--v)*28) calc(var(--u)*30);border:1px solid rgba(247,184,31,.5);border-radius:calc(var(--u)*16);background:linear-gradient(135deg,rgba(8,12,20,.72),rgba(0,0,0,.62));box-shadow:0 0 calc(var(--u)*24) rgba(247,184,31,.08) inset}
+.csg-ic{flex:none;position:relative;display:grid;place-items:center;width:calc(var(--u)*72);height:calc(var(--v)*72);border:1px solid rgba(247,184,31,.7);border-radius:50%;background:radial-gradient(circle,rgba(247,184,31,.18),rgba(0,0,0,.4));margin-right:calc(var(--u)*8)}
+.csg-ic::after{content:"";position:absolute;right:calc(var(--u)*-22);top:calc(var(--v)*-14);bottom:calc(var(--v)*-14);width:1px;background:linear-gradient(180deg,transparent,rgba(247,184,31,.55),transparent)}
+.csg-ic svg{width:calc(var(--u)*34);height:calc(var(--v)*34);fill:none;stroke:#f7b81f;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.csg-card p{margin:0;font-size:calc(var(--u)*16.4);line-height:1.62;color:#f3f3f6}
+.csg-card b{font-weight:700;color:#f7b81f}
+
+/* why choose us */
+.csg-why{background:#05080e url("../uploads/legacy/corporate%20security%20guards/Nighttime%20Security%20Entrance%20Panorama.webp") 0 0/100% 100% no-repeat;min-height:calc(var(--u)*522);padding-bottom:calc(var(--u)*60)}
+.csg-why-row{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:calc(var(--u)*50);margin-top:calc(var(--v)*44);padding:0 calc(var(--u)*90)}
+.csg-why-photo{flex:none;width:calc(var(--u)*660);margin:0;border:calc(var(--u)*3) solid #f7b81f;border-radius:calc(var(--u)*18);overflow:hidden;box-shadow:0 0 calc(var(--u)*34) rgba(247,184,31,.3)}
+.csg-why-photo img{display:block;width:100%;height:auto}
+.csg-list{list-style:none;flex:0 1 calc(var(--u)*640);margin:0;padding:0}
+.csg-list li{display:flex;align-items:center;gap:calc(var(--u)*18);padding:calc(var(--v)*13) 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:calc(var(--u)*20);color:#fff}
+.csg-list li:first-child{border-top:1px solid rgba(255,255,255,.12)}
+.csg-list li i{flex:none;display:grid;place-items:center;width:calc(var(--u)*38);height:calc(var(--v)*38);border:1px solid rgba(247,184,31,.55);border-radius:calc(var(--u)*8);background:rgba(247,184,31,.1)}
+.csg-list li i svg{width:calc(var(--u)*24);height:calc(var(--v)*24);fill:#f7b81f;stroke:#05080e;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.csg-list b{font-weight:600;color:#f7b81f}
+
+/* our process */
+.csg-proc{background:#05080e url("../uploads/legacy/corporate%20security%20guards/Cinematic%20Security%20Guard%20Banner.webp") 0 0/100% 100% no-repeat;min-height:calc(var(--u)*557);padding-bottom:calc(var(--u)*60)}
+.csg-proc-grid{position:relative;z-index:2;display:flex;flex-wrap:wrap;justify-content:center;gap:calc(var(--v)*24) calc(var(--u)*24);width:calc(var(--u)*1480);max-width:100%;margin:calc(var(--u)*46) auto 0}
+.csg-step{display:flex;align-items:center;gap:calc(var(--u)*26);width:calc(var(--u)*470);height:calc(var(--v)*130);padding:0 calc(var(--u)*34);border:1.5px solid rgba(247,184,31,.85);border-radius:calc(var(--u)*14);background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(0,0,0,.55));box-shadow:0 0 calc(var(--u)*22) rgba(247,184,31,.3),0 0 calc(var(--u)*18) rgba(247,184,31,.12) inset}
+.csg-step i{flex:none;position:relative;display:grid;place-items:center;width:calc(var(--u)*92);height:calc(var(--v)*92);border:1px solid rgba(247,184,31,.7);border-radius:50%;background:radial-gradient(circle,rgba(247,184,31,.15),rgba(0,0,0,.4))}
+.csg-step i::after{content:"";position:absolute;right:calc(var(--u)*-26);top:calc(var(--v)*6);bottom:calc(var(--v)*6);width:1px;background:rgba(247,184,31,.5)}
+.csg-step i svg{width:calc(var(--u)*52);height:calc(var(--v)*52);fill:none;stroke:#f7b81f;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.csg-step b{margin-left:calc(var(--u)*24);font:600 calc(var(--u)*20)/1.35 'Poppins',sans-serif;color:#fff}
+
+/* call to action */
+.csg-cta{background:#fff url("../uploads/legacy/corporate%20security%20guards/Modern%20Security%20Guard%20Banner.webp") right center/auto 100% no-repeat;height:calc(var(--u)*470);color:#111}
+.csg-cta::before{content:"";position:absolute;top:0;bottom:0;right:calc(var(--u)*686);width:calc(var(--u)*150);z-index:0;background:linear-gradient(90deg,#fff 0,#fff 30%,rgba(255,255,255,0));pointer-events:none}
+.csg-cta-in{z-index:1;position:absolute;left:calc(var(--u)*100);top:50%;transform:translateY(-50%);width:calc(var(--u)*900)}
+.csg-eyebrow{margin:0 0 calc(var(--v)*16);font:600 calc(var(--u)*17)/1.3 'Plus Jakarta Sans',sans-serif;letter-spacing:.22em;color:#f7b81f}
+.csg-cta h2{margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:calc(var(--u)*52);line-height:1.2;color:#111}
+.csg-cta h2 em{font-style:normal;color:#f7b81f}
+.csg-cta-p{margin:calc(var(--v)*16) 0 calc(var(--v)*34);font-size:calc(var(--u)*24);color:#222}
+.csg-btn{display:inline-flex;align-items:center;gap:calc(var(--u)*14);padding:calc(var(--v)*20) calc(var(--u)*40);border-radius:calc(var(--u)*14);background:#fbb616;font:700 calc(var(--u)*24)/1 'Poppins',sans-serif;color:#111;box-shadow:0 8px 22px rgba(251,182,22,.35);transition:transform .2s,box-shadow .2s}
+.csg-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(251,182,22,.5)}
+.csg-btn svg{width:calc(var(--u)*28);height:calc(var(--v)*28);fill:none;stroke:#111;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:1000px){
+  .hero.pg-csg{height:auto;min-height:340px}
+  .hero.pg-csg::after{top:0;background-size:cover;background-position:70% center}
+  .csg-ttl{position:relative;left:auto;top:auto;padding:230px 18px 34px}
+  .csg-ttl h1{font-size:32px;line-height:1.2}.csg-ttl p{font-size:12px}.csg-dash{width:50px;height:5px}
+  .csg-head{padding:34px 16px 0}.csg-head h2{font-size:24px}.csg-shield svg{width:38px;height:38px}.csg-ln{width:60px}
+  .csg-cards{grid-template-columns:1fr;padding:0 16px;gap:16px;margin-top:26px}
+  .csg-card{gap:16px;padding:18px}.csg-ic{width:54px;height:54px;margin-right:0}.csg-ic svg{width:26px;height:26px}.csg-ic::after{display:none}.csg-card p{font-size:14.5px}
+  .csg-svc,.csg-why,.csg-proc{padding-bottom:40px;min-height:0;background-size:cover;background-position:center}
+  .csg-why-row{flex-direction:column;padding:0 16px;gap:22px;margin-top:26px}
+  .csg-why-photo{width:100%}.csg-list{width:100%;flex:none}.csg-list li{font-size:15px;gap:12px}.csg-list li i{width:32px;height:32px}.csg-list li i svg{width:20px;height:20px}
+  .csg-proc-grid{width:auto;padding:0 16px;gap:14px;margin-top:26px}
+  .csg-step{width:100%;height:auto;padding:14px 18px;gap:16px}.csg-step i{width:62px;height:62px}.csg-step i svg{width:34px;height:34px}.csg-step i::after{display:none}.csg-step b{font-size:16px;margin-left:0}
+  .csg-cta{aspect-ratio:auto;height:auto;padding:46px 16px;background-size:cover;background-position:80% center}
+  .csg-cta::before{display:none}
+  .csg-cta-in{position:relative;left:auto;top:auto;transform:none;width:auto;max-width:78%}
+  .csg-cta h2{font-size:26px}.csg-cta-p{font-size:15px;margin:12px 0 22px}.csg-eyebrow{font-size:11px}.csg-btn{font-size:16px;padding:14px 24px;gap:10px}.csg-btn svg{width:20px;height:20px}
+}

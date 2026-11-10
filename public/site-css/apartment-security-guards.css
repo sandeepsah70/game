@@ -1,0 +1,50 @@
+﻿/* A5 note: verbatim legacy CSS; only change = url(../img/x.png) rewritten to /uploads/legacy/*.webp (media manifest). */
+/* Apartment Security Guards page â€” scales with --u */
+
+/* hero */
+.hero.pg-apt{height:calc(var(--u)*171 + var(--v)*470);background:#0a0f14;overflow:hidden}
+.hero.pg-apt::after{content:"";position:absolute;left:0;right:0;top:calc(var(--u)*171);bottom:0;z-index:0;
+  background:linear-gradient(90deg,rgba(4,6,10,.75) 0%,rgba(4,6,10,.4) 35%,rgba(4,6,10,0) 60%),url("../uploads/legacy/Appartment%20security%20guards/Skyvie%20Entrance%20Guards%20at%20Night.webp") center/cover no-repeat}
+.hero.pg-apt>.navbar,.hero.pg-apt>[class*="topbar"]{position:relative;z-index:5}
+.apt-ttl{position:absolute;left:calc(var(--u)*170);top:calc(var(--u)*171 + var(--v)*105);z-index:3}
+.apt-dash{display:block;width:calc(var(--u)*72);height:calc(var(--v)*7);background:#f7b81f;margin-bottom:calc(var(--u)*26)}
+.apt-ttl h1{margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:calc(var(--u)*56);line-height:calc(var(--v)*66);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.apt-ttl h1 em{font-style:normal;color:#f7b81f}
+.apt-glow{display:block;width:calc(var(--u)*430);height:3px;margin-top:calc(var(--v)*20);background:linear-gradient(90deg,transparent,#f7b81f 25%,#f7b81f 60%,transparent);box-shadow:0 0 14px rgba(247,184,31,.8)}
+
+/* body */
+.apt-body{position:relative;width:100%;overflow:hidden;color:#fff;background:#05080e url("../uploads/legacy/Appartment%20security%20guards/Luxury%20Residence%20Security%20Entrance.webp") center/cover no-repeat;min-height:calc(var(--u)*691);padding-bottom:calc(var(--u)*60)}
+.apt-body::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,6,12,.6),rgba(3,6,12,.25) 60%,rgba(3,6,12,0))}
+.apt-in{position:relative;z-index:2;padding:calc(var(--u)*24) calc(var(--u)*100) 0 calc(var(--u)*100)}
+.apt-eyebrow{display:flex;align-items:center;gap:calc(var(--u)*22);margin:0;font:600 calc(var(--u)*14.4)/1.3 'Plus Jakarta Sans',sans-serif;letter-spacing:.2em;color:#f7b81f}
+.apt-eyebrow i{display:block;width:calc(var(--u)*120);height:1px;background:rgba(247,184,31,.7)}
+.apt-in h2{margin:calc(var(--v)*10) 0 calc(var(--v)*14);font-family:'Poppins',sans-serif;font-weight:600;font-size:calc(var(--u)*37);line-height:1.2;color:#fff}
+.apt-in h2 em{font-style:normal;color:#f7b81f}
+.apt-p{margin:0;max-width:calc(var(--u)*1000);font-size:calc(var(--u)*15.6);line-height:1.62;color:#eceff3}
+.apt-call{display:flex;align-items:flex-start;gap:calc(var(--u)*22);max-width:calc(var(--u)*1040);margin-top:calc(var(--v)*24);padding:calc(var(--v)*18) calc(var(--u)*26) calc(var(--v)*20) calc(var(--u)*20);border:1px solid rgba(247,184,31,.65);border-radius:calc(var(--u)*14);background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.35));box-shadow:0 0 calc(var(--u)*22) rgba(247,184,31,.12)}
+.apt-call>i{flex:none;display:grid;place-items:center;width:calc(var(--u)*68);height:calc(var(--v)*68);border:1px solid rgba(247,184,31,.7);border-radius:calc(var(--u)*12);background:rgba(247,184,31,.12)}
+.apt-call>i svg{width:calc(var(--u)*40);height:calc(var(--v)*40);fill:none;stroke:#f7b81f;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.apt-call h3{margin:0 0 calc(var(--v)*8);font:600 calc(var(--u)*22)/1.25 'Poppins',sans-serif;color:#fff}
+.apt-call h3 em{font-style:normal;color:#f7b81f}
+.apt-call p{margin:0;font-size:calc(var(--u)*14.8);line-height:1.6;color:#e4e6ea}
+.apt-h3{margin:calc(var(--v)*30) 0 calc(var(--v)*8);font:600 calc(var(--u)*26)/1.25 'Poppins',sans-serif;color:#fff}
+.apt-h3 em{font-style:normal;color:#f7b81f}
+.apt-p2{margin:0;font-size:calc(var(--u)*15);line-height:1.5;color:#e4e6ea}
+.apt-list{list-style:none;margin:calc(var(--v)*18) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,calc(var(--u)*610));grid-auto-flow:row;gap:calc(var(--u)*7) calc(var(--u)*0)}
+.apt-list li{display:flex;align-items:center;gap:calc(var(--u)*14);padding:calc(var(--v)*7) calc(var(--u)*14) calc(var(--v)*7) calc(var(--u)*6);border-radius:calc(var(--u)*30);background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,0));font-size:calc(var(--u)*13.8);color:#f1f2f4}
+.apt-list i{flex:none;display:grid;place-items:center;width:calc(var(--u)*25);height:calc(var(--v)*25);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe08a,#d99a14)}
+.apt-list i svg{width:calc(var(--u)*15);height:calc(var(--v)*15);fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:1000px){
+  .hero.pg-apt{height:auto;min-height:340px}
+  .hero.pg-apt::after{top:0;background-position:60% center}
+  .apt-ttl{position:relative;left:auto;top:auto;padding:230px 18px 34px}
+  .apt-ttl h1{font-size:28px;line-height:1.2}.apt-dash{width:50px;height:5px}.apt-glow{width:200px}
+  .apt-body{aspect-ratio:auto;min-height:0;padding-bottom:40px;background-position:75% center}
+  .apt-body::before{background:rgba(3,6,12,.7)}
+  .apt-in{padding:30px 16px 0}.apt-eyebrow{font-size:11px;gap:10px}.apt-eyebrow i{width:40px}
+  .apt-in h2{font-size:22px}.apt-p{font-size:14.5px}
+  .apt-call{flex-direction:column;gap:12px;padding:16px}.apt-call>i{width:52px;height:52px}.apt-call>i svg{width:30px;height:30px}.apt-call h3{font-size:17px}.apt-call p{font-size:14px}
+  .apt-h3{font-size:20px;margin-top:24px}.apt-p2{font-size:14px}
+  .apt-list{grid-template-columns:1fr}.apt-list li{font-size:14px;gap:10px}.apt-list i{width:22px;height:22px}.apt-list i svg{width:13px;height:13px}
+}

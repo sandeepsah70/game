@@ -1,0 +1,77 @@
+﻿/* A5 note: verbatim legacy CSS; only change = url(../img/x.png) rewritten to /uploads/legacy/*.webp (media manifest). */
+/* Industrial Security Services page â€” shares CTA styles with corporate-security-guards.css; scales with --u */
+
+/* hero */
+.hero.pg-isg{height:calc(var(--u)*171 + var(--v)*470);background:#0a0f14;overflow:hidden}
+.hero.pg-isg::after{content:"";position:absolute;left:0;right:0;top:calc(var(--u)*171);bottom:0;z-index:0;
+  background:linear-gradient(90deg,rgba(4,6,10,.7) 0%,rgba(4,6,10,.25) 45%,rgba(4,6,10,0) 65%),
+             url("../uploads/legacy/Industrial%20Seurity%20Services/Cinematic%20Warehouse%20Security%20Aisle.webp") center/cover no-repeat}
+.hero.pg-isg>.navbar,.hero.pg-isg>[class*="topbar"]{position:relative;z-index:5}
+.isg-ttl{position:absolute;left:calc(var(--u)*175);top:calc(var(--u)*171 + var(--v)*105);z-index:3}
+.isg-dash{display:block;width:calc(var(--u)*78);height:calc(var(--v)*7);background:#f7b81f;margin-bottom:calc(var(--u)*26)}
+.isg-ttl h1{margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:calc(var(--u)*66);line-height:calc(var(--v)*76);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.isg-ttl h1 em{font-style:normal;color:#f7b81f}
+.isg-glow{display:block;width:calc(var(--u)*400);height:3px;margin-top:calc(var(--v)*18);background:linear-gradient(90deg,transparent,#f7b81f 25%,#f7b81f 60%,transparent);box-shadow:0 0 14px rgba(247,184,31,.8)}
+
+/* intro (light) */
+.isg-intro{position:relative;width:100%;overflow:hidden;color:#111;background:#fff url("../uploads/legacy/Industrial%20Seurity%20Services/Modern%20Security%20Guard%20Cityscape%20Banner.webp") center/cover no-repeat;aspect-ratio:2078/757;min-height:calc(var(--u)*560)}
+.isg-left{position:absolute;left:calc(var(--u)*60);top:calc(var(--v)*50);width:calc(var(--u)*575);padding-left:calc(var(--u)*24);border-left:calc(var(--u)*5) solid #f7b81f}
+.isg-eyebrow{margin:0 0 calc(var(--v)*10);font:600 calc(var(--u)*15)/1.3 'Plus Jakarta Sans',sans-serif;letter-spacing:.2em;color:#b8860b}
+.isg-left h2{margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:calc(var(--u)*34);line-height:1.22;color:#10151c}
+.isg-left h2 em{font-style:normal;color:#c58a1c}
+.isg-uline{display:block;width:calc(var(--u)*70);height:4px;margin:calc(var(--v)*18) 0 0;background:#f7b81f;border-radius:2px}
+.isg-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*14);margin:calc(var(--u)*34) calc(var(--u)*-24) 0 calc(var(--u)*-24)}
+.isg-stat{display:flex;flex-direction:column;align-items:center;text-align:center;padding:calc(var(--v)*16) calc(var(--u)*8) calc(var(--v)*18);border-radius:calc(var(--u)*16);background:rgba(255,255,255,.92);box-shadow:0 6px 20px rgba(120,90,20,.12)}
+.isg-stat i{display:grid;place-items:center;width:calc(var(--u)*50);height:calc(var(--v)*50);border-radius:50%;background:#fbecc2}
+.isg-stat i svg{width:calc(var(--u)*26);height:calc(var(--v)*26);fill:none;stroke:#c58a1c;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.isg-stat b{margin-top:calc(var(--v)*8);font:700 calc(var(--u)*26)/1.1 'Poppins',sans-serif;color:#10151c}
+.isg-stat strong{margin-top:calc(var(--v)*8);font:600 calc(var(--u)*16)/1.25 'Poppins',sans-serif;color:#10151c;min-height:calc(var(--u)*29)}
+.isg-stat span{margin-top:calc(var(--v)*4);font-size:calc(var(--u)*12.6);line-height:1.35;color:#444}
+.isg-mid{position:absolute;left:calc(var(--u)*690);top:calc(var(--v)*50);width:calc(var(--u)*440);padding-left:calc(var(--u)*28);border-left:1px solid rgba(197,138,28,.35)}
+.isg-mid>p{margin:0;font-size:calc(var(--u)*15.4);line-height:1.62;color:#1d232b}
+.isg-feats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:calc(var(--u)*26)}
+.isg-feats>div{display:flex;flex-direction:column;padding:0 calc(var(--u)*12) 0 calc(var(--u)*14);border-left:1px solid rgba(0,0,0,.14)}
+.isg-feats>div:first-child{border-left:0;padding-left:0}
+.isg-feats i{display:grid;place-items:center;width:calc(var(--u)*46);height:calc(var(--v)*46);border-radius:50%;background:#fbecc2}
+.isg-feats i svg{width:calc(var(--u)*24);height:calc(var(--v)*24);fill:none;stroke:#c58a1c;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.isg-feats b{margin-top:calc(var(--v)*10);font:700 calc(var(--u)*16)/1.25 'Poppins',sans-serif;color:#10151c}
+.isg-feats span{margin-top:calc(var(--v)*6);font-size:calc(var(--u)*13.4);line-height:1.4;color:#555}
+.isg-btn{display:inline-flex;align-items:center;gap:calc(var(--u)*12);margin-top:calc(var(--v)*30);padding:calc(var(--v)*15) calc(var(--u)*26);border-radius:calc(var(--u)*10);background:linear-gradient(180deg,#ffd45a,#f2a900);font:600 calc(var(--u)*16)/1 'Poppins',sans-serif;color:#111;box-shadow:0 8px 20px rgba(242,169,0,.35);transition:transform .2s}
+.isg-btn:hover{transform:translateY(-2px)}
+.isg-btn svg{width:calc(var(--u)*20);height:calc(var(--v)*20);fill:none;stroke:#111;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* top class security services (dark) */
+.isg-top{position:relative;width:100%;overflow:hidden;color:#fff;background:#05080e url("../uploads/legacy/Industrial%20Seurity%20Services/Industrial%20Security%20Guard%20Banner.webp") center/cover no-repeat;aspect-ratio:1950/807;min-height:calc(var(--u)*690)}
+.isg-top::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,6,12,.82),rgba(3,6,12,.45) 60%,rgba(3,6,12,.1))}
+.isg-top-in{position:relative;z-index:2;padding:calc(var(--u)*48) calc(var(--u)*92) 0}
+.isg-bar{display:block;width:calc(var(--u)*80);height:calc(var(--v)*6);background:#f7b81f;margin-bottom:calc(var(--v)*20);border-radius:3px}
+.isg-top h2{margin:0 0 calc(var(--v)*18);font-family:'Poppins',sans-serif;font-weight:600;font-size:calc(var(--u)*42);line-height:1.2;color:#fff}
+.isg-top h2 em{font-style:normal;color:#f7b81f}
+.isg-top p{margin:0 0 calc(var(--v)*14);max-width:calc(var(--u)*1480);font-size:calc(var(--u)*16.2);line-height:1.62;color:#eceff3}
+.isg-incl{display:inline-flex;align-items:center;gap:calc(var(--u)*16);margin-top:calc(var(--v)*18);padding:calc(var(--v)*12) calc(var(--u)*60) calc(var(--v)*12) calc(var(--u)*22);border:1px solid rgba(247,184,31,.8);background:linear-gradient(90deg,rgba(247,184,31,.22),rgba(0,0,0,.55));clip-path:polygon(0 0,100% 0,calc(100% - var(--u)*26) 100%,0 100%);font:600 calc(var(--u)*23)/1.2 'Poppins',sans-serif;color:#fff}
+.isg-incl svg{width:calc(var(--u)*34);height:calc(var(--v)*34);fill:none;stroke:#f7b81f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.isg-incl em{font-style:normal;color:#f7b81f}
+.isg-list{list-style:none;margin:calc(var(--v)*22) 0 0;padding:0}
+.isg-list li{display:flex;align-items:center;gap:calc(var(--u)*16);padding:calc(var(--v)*7) 0;font-size:calc(var(--u)*17.4);color:#fff}
+.isg-list i{flex:none;display:grid;place-items:center;width:calc(var(--u)*34);height:calc(var(--v)*34);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe08a,#e6a817);box-shadow:0 0 0 calc(var(--u)*3) rgba(247,184,31,.25)}
+.isg-list i svg{width:calc(var(--u)*20);height:calc(var(--v)*20);fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:1000px){
+  .hero.pg-isg{height:auto;min-height:340px}
+  .hero.pg-isg::after{top:0;background-position:70% center}
+  .isg-ttl{position:relative;left:auto;top:auto;padding:230px 18px 34px}
+  .isg-ttl h1{font-size:30px;line-height:1.2}.isg-dash{width:50px;height:5px}.isg-glow{width:200px}
+  .isg-intro{aspect-ratio:auto;min-height:0;padding:34px 16px;background-position:80% bottom}
+  .isg-left,.isg-mid{position:relative;left:auto;top:auto;width:auto}
+  .isg-left{padding-left:14px}.isg-left h2{font-size:22px}.isg-eyebrow{font-size:11px}
+  .isg-stats{grid-template-columns:repeat(2,1fr);margin:24px 0 0;gap:10px}
+  .isg-stat b{font-size:22px}.isg-stat strong{font-size:14px}.isg-stat span{font-size:12px}.isg-stat i{width:42px;height:42px}.isg-stat i svg{width:22px;height:22px}
+  .isg-mid{margin-top:26px;padding:0;border-left:0}.isg-mid>p{font-size:14.5px}
+  .isg-feats{grid-template-columns:1fr;gap:16px;margin-top:20px}.isg-feats>div{border-left:0;padding:0}.isg-feats b{font-size:15px}.isg-feats span{font-size:13px}
+  .isg-feats i{width:42px;height:42px}.isg-feats i svg{width:22px;height:22px}
+  .isg-btn{font-size:14px;padding:13px 18px;margin-top:24px}.isg-btn svg{width:18px;height:18px}
+  .isg-top{aspect-ratio:auto;min-height:0;padding-bottom:50px;background-position:75% center}
+  .isg-top-in{padding:34px 16px 0}.isg-top h2{font-size:24px}.isg-top p{font-size:14.5px}
+  .isg-incl{font-size:15px;padding:10px 40px 10px 14px;gap:10px;margin-top:10px}.isg-incl svg{width:24px;height:24px}
+  .isg-list li{font-size:15px;gap:12px}.isg-list i{width:28px;height:28px}.isg-list i svg{width:16px;height:16px}
+}
