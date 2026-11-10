@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { User } from '@supabase/supabase-js'
 import { supabase } from '../supabaseClient'
-import { LogOut, Trophy, Shield, Zap, Sparkles, User as UserIcon } from 'lucide-react'
+import { LogOut, Trophy, Shield, Zap, Sparkles, User as UserIcon, Gamepad2 } from 'lucide-react'
+import { SpaceDefender } from './SpaceDefender'
 
 interface DashboardProps {
   user: User
@@ -9,6 +10,8 @@ interface DashboardProps {
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({ user }) => {
+  const [inGame, setInGame] = useState(false)
+
   const handleSignOut = async () => {
     await supabase.auth.signOut()
   }
@@ -17,6 +20,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ user }) => {
     user.user_metadata?.full_name ||
     user.email?.split('@')[0] ||
     'Player'
+
+  if (inGame) {
+    return <SpaceDefender onBack={() => setInGame(false)} gamerName={gamerName} />
+  }
 
   return (
     <div className="dashboard-wrapper">
@@ -44,12 +51,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ user }) => {
             <span className="rank-tag">RANK: ROOKIE CHALLENGER</span>
             <h1>Welcome back, <span className="highlight-text">{gamerName}</span>!</h1>
             <p>
-              Your Supabase account is active and connected. Jump into the arena or explore your stats below.
+              Your Supabase account is active and connected. Jump into the Cyber Defender arena or check your stats below.
             </p>
             <div className="hero-actions">
-              <button className="play-btn">
-                <Zap size={18} />
-                <span>Start Playing</span>
+              <button className="play-btn" onClick={() => setInGame(true)}>
+                <Gamepad2 size={18} />
+                <span>Play Cyber Defender</span>
               </button>
               <button className="secondary-btn">
                 <Trophy size={18} />
