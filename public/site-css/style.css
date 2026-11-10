@@ -4359,3 +4359,28 @@ body:has(.navbar.open) .float-wrap,body:has(.navbar.open) .pw-btn,body:has(.navb
   /* bottom bar */
   footer.foot .ft-bar{margin:18px -14px 0!important;padding:16px 12px 78px!important}
 }
+
+
+/* Enhanced background image support for Risk Cards and Premium Cards */
+.rk-card {
+  background-image: var(--img, url("../uploads/legacy/Golden%20Shield%20Security%20Services%20Grid.webp")) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.rk-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 11, 16, 0.75);
+  z-index: 0;
+}
+.rk-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pm-photo {
+  background-size: cover !important;
+  background-position: center !important;
+}
