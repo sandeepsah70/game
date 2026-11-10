@@ -4384,3 +4384,13 @@ body:has(.navbar.open) .float-wrap,body:has(.navbar.open) .pw-btn,body:has(.navb
   background-size: cover !important;
   background-position: center !important;
 }
+
+/* Ensure Circular Logo Display & Transparent Emblem */
+.logo, .logo img, .ft-logo, .ft-logo img, img.brand-logo, img[src*="jtms-logo"], img[src*="vigilant-badge"], img[src*="logo-blr"] {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
