@@ -81,3 +81,4 @@ export const AppDownloadModal: React.FC<AppDownloadModalProps> = ({ isOpen, onCl
     </div>
   )
 }
+

@@ -17,6 +17,7 @@ import { AccountView } from './components/AccountView'
 import { WalletModal } from './components/WalletModal'
 import { AuthModal } from './components/AuthModal'
 import { AppDownloadModal } from './components/AppDownloadModal'
+import { SlotGame } from './components/SlotGame'
 import './App.css'
 
 export default function App() {
@@ -85,6 +86,8 @@ export default function App() {
       setActiveGame('chicken_road')
     } else if (gameId === 'mines') {
       setActiveGame('mines')
+    } else if (gameId === 'fortune_gems' || gameId === 'super_ace') {
+      setActiveGame('slots')
     } else if (gameId === 'space_defender') {
       setActiveGame('space_defender')
     } else {
@@ -127,6 +130,12 @@ export default function App() {
             />
           ) : activeGame === 'mines' ? (
             <MinesGame
+              onBack={() => setActiveGame(null)}
+              balance={balance}
+              onUpdateBalance={handleUpdateBalance}
+            />
+          ) : activeGame === 'slots' ? (
+            <SlotGame
               onBack={() => setActiveGame(null)}
               balance={balance}
               onUpdateBalance={handleUpdateBalance}

@@ -183,3 +183,4 @@ export const ChickenRoadGame: React.FC<ChickenRoadGameProps> = ({ onBack, balanc
     </div>
   )
 }
+
