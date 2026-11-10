@@ -27,3 +27,4 @@ export const FloatingCall: React.FC = () => {
     </div>
   )
 }
+

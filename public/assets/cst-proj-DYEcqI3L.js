@@ -1,0 +1,6 @@
+import{m as s}from"./TemplateSection-XeCjQ-sk.js";const t={"cst-proj":{rootClass:"cst-proj",html:`<div class="cst-in">
+<span class="cst-bar"></span>
+<h2>{{{h2}}}</h2>
+<p>{{p}}</p>
+<span class="cst-bar cst-bar-s"></span>
+</div>`}},o=[],e={tpl:"cst-proj",variant:"",h2:"<em>Construction Security</em><br> For Your Project",p:"If you’re building a new home or business, then you constantly have valuables going in and out of your construction site. Many of them, if left unprotected, are easy grabs for potential thieves. Those who are homeless, addicted to drugs, or just down on their luck may see an unprotected construction site as their next meal ticket. Chances are you’ve worked hard for the opportunity to build your home or business — don’t let anyone make it more difficult!"},n={type:"cst-proj",label:"Cst Proj",icon:"shield",category:"Services",description:'Legacy "cst-proj" section; used on: construction-security-services',fields:[{name:"variant",type:"text",label:"Extra CSS classes (variant)",help:"Appended to the section root class list, e.g. pg-award"},{name:"h2",label:"H2",type:"richtext",inline:!0},{name:"p",label:"P",type:"textarea"}],defaults:e,Component:s("cst-proj",t,e,o)},a=Object.freeze(Object.defineProperty({__proto__:null,default:n,defaults:e,templates:t,widgets:o},Symbol.toStringTag,{value:"Module"}));export{a as _};
