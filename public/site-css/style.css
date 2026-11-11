@@ -1,4 +1,4 @@
-﻿/* A5 note: verbatim legacy CSS; only change = url(../img/x.png) rewritten to /uploads/legacy/*.webp (media manifest). */
+/* A5 note: verbatim legacy CSS; only change = url(../img/x.png) rewritten to /uploads/legacy/*.webp (media manifest). */
 /*
   Pixel-matched to the 1670 x 942 reference design.
   1 design pixel = var(--u) = 100vw / 1670, so everything scales proportionally.
@@ -4394,3 +4394,12 @@ body:has(.navbar.open) .float-wrap,body:has(.navbar.open) .pw-btn,body:has(.navb
   background: transparent !important;
 }
 
+
+
+/* Completely remove and hide all video players, modals, and play buttons */
+.aw-play, .ab-play, video, .video-modal, .vid-modal, [data-video-modal], button[aria-label*="video" i], button[aria-label*="Play" i] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
