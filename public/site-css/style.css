@@ -4403,3 +4403,15 @@ body:has(.navbar.open) .float-wrap,body:has(.navbar.open) .pw-btn,body:has(.navb
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* Permanently remove Google Map and all map elements from footer & bottom */
+.ft-map, .mp-card, .mp-pin, .mp-lbl, .mp-area, footer.foot .ft-map, .foot .ft-map, iframe[src*="google.com/maps"], a[href*="google.com/maps"], [class*="ft-map"], [class*="mp-area"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
