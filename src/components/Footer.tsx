@@ -1,28 +1,25 @@
 import React from 'react'
-import { Shield, Phone, Mail, MapPin } from 'lucide-react'
+import { Shield, Mail, MapPin, FileText, Globe } from 'lucide-react'
 
 export const Footer: React.FC = () => {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <footer className="blr-footer">
       <div className="blr-container footer-content-grid">
         {/* Col 1: Brand & About */}
         <div className="footer-col brand-col">
-          <div className="footer-brand">
-            <div className="logo-shield mini">
-              <Shield size={22} className="shield-icon-yellow" />
-            </div>
+          <div className="footer-brand" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <img
+              src="./uploads/logo/jtms-logo-transparent.png"
+              alt="JTMS Logo"
+              style={{ width: 48, height: 48, objectFit: 'contain', borderRadius: '50%' }}
+            />
             <div className="brand-text-block">
-              <span className="brand-name">BLR <span className="highlight-yellow">SQUAD</span></span>
-              <span className="brand-motto">TRUST • SECURE • PROTECT</span>
+              <span className="brand-name">JTMS <span className="highlight-yellow">TECHS</span></span>
+              <span className="brand-motto">YOUR SAFETY, OUR RESPONSIBILITY</span>
             </div>
           </div>
           <p className="footer-company-desc">
-            JTMS India Services Private Limited is a government-licensed (PSARA) security guard and facility management agency providing high-caliber protective personnel across Karnataka and South India.
+            JTMS TECHS Manpower and Security Service Private Limited is a government-licensed (PSARA) security guard and facility management agency providing high-caliber protective personnel across Karnataka and South India.
           </p>
           <div className="psara-reg-badge">
             <Shield size={14} className="text-yellow" />
@@ -32,53 +29,60 @@ export const Footer: React.FC = () => {
 
         {/* Col 2: Security Services */}
         <div className="footer-col">
-          <h4 className="footer-heading">Security Services</h4>
+          <h4 className="footer-heading">Our Services</h4>
           <ul className="footer-links">
-            <li><button onClick={() => scrollTo('services')}>Corporate & Tech Park Security</button></li>
-            <li><button onClick={() => scrollTo('services')}>Apartment & Residential Security</button></li>
-            <li><button onClick={() => scrollTo('services')}>Industrial & Factory Security</button></li>
-            <li><button onClick={() => scrollTo('services')}>Armed & Unarmed Security Guards</button></li>
-            <li><button onClick={() => scrollTo('services')}>VIP Bodyguards & Executive Escorts</button></li>
-            <li><button onClick={() => scrollTo('services')}>Event Bouncers & Crowd Control</button></li>
-            <li><button onClick={() => scrollTo('services')}>K9 Dog Squad Security</button></li>
-            <li><button onClick={() => scrollTo('services')}>Integrated Facility Management</button></li>
+            <li><a href="./#our-services">Corporate & Tech Park Security</a></li>
+            <li><a href="./#our-services">Apartment & Residential Security</a></li>
+            <li><a href="./#our-services">Industrial & Factory Security</a></li>
+            <li><a href="./#our-services">Armed & Unarmed Security Guards</a></li>
+            <li><a href="./premium-services">VIP Bodyguards & Executive Escorts</a></li>
+            <li><a href="./premium-services">High Value Goods Escort</a></li>
+            <li><a href="./#our-services">K9 Dog Squad Security</a></li>
+            <li><a href="./#our-services">Integrated Facility Management</a></li>
           </ul>
         </div>
 
         {/* Col 3: Quick Navigation */}
         <div className="footer-col">
-          <h4 className="footer-heading">Quick Links</h4>
+          <h4 className="footer-heading">Quick Pages</h4>
           <ul className="footer-links">
-            <li><button onClick={() => scrollTo('hero')}>Home</button></li>
-            <li><button onClick={() => scrollTo('why-us')}>Why Choose JTMS</button></li>
-            <li><button onClick={() => scrollTo('stats')}>Manpower & Deployment</button></li>
-            <li><button onClick={() => scrollTo('testimonials')}>Client Testimonials</button></li>
-            <li><button onClick={() => scrollTo('areas')}>Coverage Across Bangalore</button></li>
-            <li><button onClick={() => scrollTo('risk')}>Request Site Survey</button></li>
-            <li><button onClick={() => scrollTo('contact')}>Contact Central Dispatch</button></li>
+            <li><a href="./">Home</a></li>
+            <li><a href="./about">About Us</a></li>
+            <li><a href="./#our-services">Services</a></li>
+            <li><a href="./premium-services">Premium Services</a></li>
+            <li><a href="./media">Media & Press Releases</a></li>
+            <li><a href="./clients">Our Reputed Clients</a></li>
+            <li><a href="./gallery">Photo Gallery</a></li>
+            <li><a href="./brochure/JTMS-Brochure.pdf" target="_blank" rel="noreferrer">Download Official Brochure</a></li>
           </ul>
         </div>
 
         {/* Col 4: Contact & Office */}
         <div className="footer-col">
-          <h4 className="footer-heading">Bengaluru Head Office</h4>
+          <h4 className="footer-heading">Registered Office</h4>
           <div className="footer-contact-items">
             <div className="f-item">
               <MapPin size={18} className="f-icon" />
               <span>
-                #79, 1st Floor, B. Channasandra Bus Stop, Kasturinagar, Bengaluru, Karnataka – 560043
+                BCMC Layout, 4th Main, 8th Cross, Near Shani Mahatma Temple, Raghuvanhalli, Bangalore - 560062, Karnataka
               </span>
             </div>
             <div className="f-item">
-              <Phone size={18} className="f-icon" />
+              <Mail size={18} className="f-icon" />
               <div>
-                <a href="tel:+91 99644 41471">+91 99644 41471</a><br />
-                <a href="tel:+91 99644 41472">+91 99644 41472</a>
+                <a href="mailto:info@jtmstech.in">info@jtmstech.in</a><br />
+                <a href="mailto:Info.com875@gmail.com">Info.com875@gmail.com</a>
               </div>
             </div>
             <div className="f-item">
-              <Mail size={18} className="f-icon" />
-              <a href="mailto:Info.com875@gmail.com">Info.com875@gmail.com</a>
+              <Globe size={18} className="f-icon" />
+              <a href="https://www.jtmstech.in" target="_blank" rel="noreferrer">www.jtmstech.in</a>
+            </div>
+            <div className="f-item">
+              <FileText size={18} className="f-icon" />
+              <a href="./brochure/JTMS-Brochure.pdf" target="_blank" rel="noreferrer" style={{ color: '#f5c026', fontWeight: 'bold' }}>
+                View JTMS Brochure (PDF)
+              </a>
             </div>
           </div>
         </div>
@@ -87,15 +91,16 @@ export const Footer: React.FC = () => {
       {/* Copyright Bar */}
       <div className="footer-bottom-bar">
         <div className="blr-container bottom-bar-inner">
-          <p>© 2026 JTMS India Services Private Limited. All Rights Reserved.</p>
+          <p>© 2026 JTMS TECHS Manpower and Security Service Private Limited. All Rights Reserved.</p>
           <div className="bottom-policy-tags">
-            <span>PSARA License No: KAR/BLR/SEC/2026</span>
-            <span>•</span>
             <span>Bengaluru, Karnataka, India</span>
+            <span>•</span>
+            <a href="./brochure/JTMS-Brochure.pdf" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none' }}>
+              JTMS Brochure
+            </a>
           </div>
         </div>
       </div>
     </footer>
   )
 }
-

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ShieldCheck, Phone, CheckCircle2, Award, ArrowRight } from 'lucide-react'
+import { ShieldCheck, FileText, CheckCircle2, Award, ArrowRight, Mail } from 'lucide-react'
 
 interface HeroSectionProps {
   onOpenQuote: () => void
@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
         <div className="hero-text-content">
           <div className="hero-eyebrow-badge">
             <ShieldCheck size={16} className="text-yellow" />
-            <span>PSARA LICENSED • POLICE VERIFIED AGENCY</span>
+            <span>PSARA LICENSED • POLICE VERIFIED AGENCY • JTMS SECURITY</span>
           </div>
 
           <h1 className="hero-main-title">
@@ -30,9 +30,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
               <span>Get Free Security Quote</span>
               <ArrowRight size={18} />
             </button>
-            <a href="tel:+91 99644 41471" className="btn-hero-secondary">
-              <Phone size={17} />
-              <span>Call +91 99644 41471</span>
+            <a href="./brochure/JTMS-Brochure.pdf" target="_blank" rel="noreferrer" className="btn-hero-secondary">
+              <FileText size={17} />
+              <span>Get Brochure (PDF)</span>
             </a>
           </div>
 
@@ -98,10 +98,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
 
             <div className="card-quick-form">
               <span className="form-head-title">Need Guards Tomorrow?</span>
-              <p className="form-sub">Speak directly with our Bengaluru Operations Head</p>
-              <a href="tel:+91 99644 41471" className="btn-call-direct-card">
-                <Phone size={16} />
-                <span>Instant Call: +91 99644 41471</span>
+              <p className="form-sub">Speak directly with our Bengaluru Operations Team</p>
+              <a href="mailto:info@jtmstech.in" className="btn-call-direct-card">
+                <Mail size={16} />
+                <span>Email: info@jtmstech.in</span>
               </a>
             </div>
           </div>

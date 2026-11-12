@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Shield, Phone, Menu, X, ArrowRight } from 'lucide-react'
+import { FileText, Mail, Menu, X, ArrowRight } from 'lucide-react'
 
 interface NavbarProps {
   onOpenQuote: () => void
@@ -8,31 +8,29 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const scrollTo = (id: string) => {
+  const navigateTo = (url: string) => {
     setMobileMenuOpen(false)
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    window.location.href = url
   }
 
   return (
     <header className="blr-header">
-      {/* Top Notification / Helpline Bar */}
+      {/* Top Notification Bar */}
       <div className="blr-top-bar">
         <div className="blr-container top-bar-flex">
           <div className="top-trust-badge">
             <span className="dot-live"></span>
-            <span>Government Licensed (PSARA) • 100% Police Verified Guards in Bengaluru</span>
+            <span>Government Licensed (PSARA) • 100% Police Verified Guards • JTMS Security</span>
           </div>
           <div className="top-contact-links">
-            <a href="tel:+91 99644 41471" className="top-phone-link">
-              <Phone size={13} />
-              <span>24/7 Helpline: +91 99644 41471</span>
+            <a href="mailto:info@jtmstech.in" className="top-email-link">
+              <Mail size={13} style={{ marginRight: 5, verticalAlign: 'middle' }} />
+              <span>info@jtmstech.in</span>
             </a>
             <span className="divider">|</span>
-            <a href="mailto:Info.com875@gmail.com" className="top-email-link">
-              Info.com875@gmail.com
+            <a href="./brochure/JTMS-Brochure.pdf" target="_blank" rel="noreferrer" className="top-phone-link">
+              <FileText size={13} style={{ marginRight: 5, verticalAlign: 'middle' }} />
+              <span>Official Brochure</span>
             </a>
           </div>
         </div>
@@ -42,42 +40,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
       <nav className="blr-main-nav">
         <div className="blr-container nav-flex">
           {/* Brand Logo */}
-          <a href="#" className="blr-brand-logo" onClick={() => scrollTo('hero')}>
-            <div className="logo-shield">
-              <Shield size={26} className="shield-icon-yellow" />
-              <span className="shield-inner-star">★</span>
-            </div>
+          <a href="./" className="blr-brand-logo">
+            <img
+              src="./uploads/logo/jtms-logo-transparent.png"
+              alt="JTMS Security Logo"
+              style={{ width: 44, height: 44, objectFit: 'contain', borderRadius: '50%' }}
+            />
             <div className="brand-text-block">
-              <span className="brand-name">BLR <span className="highlight-yellow">SQUAD</span></span>
-              <span className="brand-motto">TRUST • SECURE • PROTECT</span>
+              <span className="brand-name">JTMS <span className="highlight-yellow">SECURITY</span></span>
+              <span className="brand-motto">YOUR SAFETY, OUR RESPONSIBILITY</span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
           <div className="desktop-nav-links">
-            <button onClick={() => scrollTo('hero')} className="nav-link">Home</button>
-            <button onClick={() => scrollTo('services')} className="nav-link">Services</button>
-            <button onClick={() => scrollTo('why-us')} className="nav-link">Why JTMS</button>
-            <button onClick={() => scrollTo('stats')} className="nav-link">Guards & Stats</button>
-            <button onClick={() => scrollTo('testimonials')} className="nav-link">Reviews</button>
-            <button onClick={() => scrollTo('areas')} className="nav-link">Coverage Areas</button>
-            <button onClick={() => scrollTo('contact')} className="nav-link">Contact</button>
+            <a href="./" className="nav-link">Home</a>
+            <a href="./about" className="nav-link">About</a>
+            <a href="./#our-services" className="nav-link">Services</a>
+            <a href="./premium-services" className="nav-link">Premium Services</a>
+            <a href="./media" className="nav-link">Media</a>
+            <a href="./clients" className="nav-link">Clients</a>
+            <a href="./gallery" className="nav-link">Gallery</a>
           </div>
 
-          {/* Right Action Call & Quote Button */}
+          {/* Right Action Get Brochure & Quote Button */}
           <div className="nav-right-actions">
-            <a href="tel:+91 99644 41471" className="nav-phone-chip">
-              <div className="phone-circle">
-                <Phone size={15} />
-              </div>
-              <div className="phone-meta">
-                <small>Quick Call</small>
-                <strong>+91 99644 41471</strong>
-              </div>
+            <a
+              href="./brochure/JTMS-Brochure.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-gold brochure"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '9px 18px', borderRadius: 4, textDecoration: 'none', fontWeight: 700, fontSize: 13 }}
+            >
+              <FileText size={15} />
+              <span>Get Brochure</span>
             </a>
 
             <button className="btn-get-quote-nav" onClick={onOpenQuote}>
-              <span>Get a Quote</span>
+              <span>Quick Enquiry</span>
               <ArrowRight size={15} />
             </button>
 
@@ -95,16 +95,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div className="mobile-dropdown-menu">
-            <button onClick={() => scrollTo('hero')} className="mobile-nav-link">Home</button>
-            <button onClick={() => scrollTo('services')} className="mobile-nav-link">Security Services</button>
-            <button onClick={() => scrollTo('why-us')} className="mobile-nav-link">Why Choose Us</button>
-            <button onClick={() => scrollTo('stats')} className="mobile-nav-link">Our Deployment</button>
-            <button onClick={() => scrollTo('testimonials')} className="mobile-nav-link">Client Testimonials</button>
-            <button onClick={() => scrollTo('areas')} className="mobile-nav-link">Bangalore Areas</button>
-            <button onClick={() => scrollTo('contact')} className="mobile-nav-link">Contact & Office</button>
+            <button onClick={() => navigateTo('./')} className="mobile-nav-link">Home</button>
+            <button onClick={() => navigateTo('./about')} className="mobile-nav-link">About</button>
+            <button onClick={() => navigateTo('./#our-services')} className="mobile-nav-link">Services</button>
+            <button onClick={() => navigateTo('./premium-services')} className="mobile-nav-link">Premium Services</button>
+            <button onClick={() => navigateTo('./media')} className="mobile-nav-link">Media & Press</button>
+            <button onClick={() => navigateTo('./clients')} className="mobile-nav-link">Our Clients</button>
+            <button onClick={() => navigateTo('./gallery')} className="mobile-nav-link">Photo Gallery</button>
             <div className="mobile-menu-cta">
-              <button
+              <a
+                href="./brochure/JTMS-Brochure.pdf"
+                target="_blank"
+                rel="noreferrer"
                 className="btn-get-quote-full"
+                style={{ textAlign: 'center', textDecoration: 'none', display: 'block' }}
+              >
+                Download Official Brochure
+              </a>
+              <button
+                className="btn-call-mobile"
                 onClick={() => {
                   setMobileMenuOpen(false)
                   onOpenQuote()
@@ -112,9 +121,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               >
                 Request Security Assessment
               </button>
-              <a href="tel:+91 99644 41471" className="btn-call-mobile">
-                <Phone size={16} /> Call +91 99644 41471
-              </a>
             </div>
           </div>
         )}
@@ -122,4 +128,3 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
     </header>
   )
 }
-

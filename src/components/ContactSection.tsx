@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2 } from 'lucide-react'
+import { MapPin, FileText, Mail, Clock, Send, CheckCircle2 } from 'lucide-react'
 
 export const ContactSection: React.FC = () => {
   const [sent, setSent] = useState(false)
@@ -24,7 +24,7 @@ export const ContactSection: React.FC = () => {
             Visit Our Bengaluru Hub or <span className="highlight-yellow">Request an Audit</span>
           </h2>
           <p className="section-subtitle">
-            Our central control dispatch room in Kasturinagar operates 24 hours a day, 365 days a year.
+            JTMS TECHS Manpower and Security Service central operations dispatch operates 24 hours a day, 365 days a year.
           </p>
         </div>
 
@@ -38,31 +38,24 @@ export const ContactSection: React.FC = () => {
               <div className="c-details">
                 <h4>Registered Head Office</h4>
                 <p>
-                  #79, 1st Floor, B. Channasandra Bus Stop,<br />
-                  Kasturinagar, Bengaluru, Karnataka – 560043
+                  BCMC Layout, 4th Main, 8th Cross, Near Shani Mahatma Temple,<br />
+                  Raghuvanhalli, Bangalore, Karnataka – 560062
                 </p>
-                <a
-                  href="https://maps.google.com/?q=Kasturinagar+Bengaluru"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="link-map-dir"
-                >
-                  View on Google Maps →
-                </a>
               </div>
             </div>
 
             <div className="contact-card-box">
               <div className="c-icon-circle">
-                <Phone size={22} className="text-yellow" />
+                <FileText size={22} className="text-yellow" />
               </div>
               <div className="c-details">
-                <h4>24/7 Operations Helpline</h4>
+                <h4>JTMS Company Brochure</h4>
                 <p>
-                  <a href="tel:+91 99644 41471" className="phone-bold">+91 99644 41471</a><br />
-                  <a href="tel:+91 99644 41472" className="phone-sub">+91 99644 41472</a>
+                  <a href="./brochure/JTMS-Brochure.pdf" target="_blank" rel="noreferrer" className="phone-bold">
+                    Download Official Brochure (PDF) →
+                  </a>
                 </p>
-                <small>Round-the-clock emergency support & relief guard dispatch</small>
+                <small>View complete company credentials, scope of work & service matrix</small>
               </div>
             </div>
 
@@ -73,6 +66,7 @@ export const ContactSection: React.FC = () => {
               <div className="c-details">
                 <h4>Official Correspondence</h4>
                 <p>
+                  <a href="mailto:info@jtmstech.in" className="email-link">info@jtmstech.in</a><br />
                   <a href="mailto:Info.com875@gmail.com" className="email-link">Info.com875@gmail.com</a>
                 </p>
                 <small>Send tender documents, RFP proposals & corporate requisitions</small>
@@ -126,7 +120,7 @@ export const ContactSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. 9964441471"
+                      placeholder="e.g. 9876543210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
@@ -164,4 +158,3 @@ export const ContactSection: React.FC = () => {
     </section>
   )
 }
-

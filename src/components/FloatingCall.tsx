@@ -1,30 +1,30 @@
 import React from 'react'
-import { Phone, MessageCircle } from 'lucide-react'
+import { FileText, Mail } from 'lucide-react'
 
 export const FloatingCall: React.FC = () => {
   return (
     <div className="float-call-deck">
       <a
-        href="https://wa.me/919964441471?text=Hi%2C%20I%20am%20looking%20for%20security%20guard%20services%20in%20Bangalore."
+        href="./brochure/JTMS-Brochure.pdf"
         target="_blank"
         rel="noreferrer"
-        className="btn-float-action whatsapp"
-        title="Chat on WhatsApp"
-        aria-label="Chat on WhatsApp"
+        className="btn-float-action call"
+        title="Download JTMS Brochure"
+        aria-label="Download JTMS Brochure"
       >
-        <MessageCircle size={24} />
+        <FileText size={22} />
+        <span className="call-floating-lbl">Brochure</span>
       </a>
 
       <a
-        href="tel:+919964441471"
-        className="btn-float-action call"
-        title="Call 24/7 Helpline"
-        aria-label="Call +91 99644 41471"
+        href="mailto:info@jtmstech.in"
+        className="btn-float-action whatsapp"
+        title="Email JTMS Support"
+        aria-label="Email info@jtmstech.in"
       >
-        <Phone size={22} />
-        <span className="call-floating-lbl">Call Us</span>
+        <Mail size={22} />
+        <span className="call-floating-lbl">Email</span>
       </a>
     </div>
   )
 }
-
