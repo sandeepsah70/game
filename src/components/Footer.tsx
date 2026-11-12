@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
           <p className="footer-company-desc">
-            Bengaluru Squad Services Private Limited is a government-licensed (PSARA) security guard and facility management agency providing high-caliber protective personnel across Karnataka and South India.
+            JTMS India Services Private Limited is a government-licensed (PSARA) security guard and facility management agency providing high-caliber protective personnel across Karnataka and South India.
           </p>
           <div className="psara-reg-badge">
             <Shield size={14} className="text-yellow" />
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
           <h4 className="footer-heading">Quick Links</h4>
           <ul className="footer-links">
             <li><button onClick={() => scrollTo('hero')}>Home</button></li>
-            <li><button onClick={() => scrollTo('why-us')}>Why Choose BLR Squad</button></li>
+            <li><button onClick={() => scrollTo('why-us')}>Why Choose JTMS</button></li>
             <li><button onClick={() => scrollTo('stats')}>Manpower & Deployment</button></li>
             <li><button onClick={() => scrollTo('testimonials')}>Client Testimonials</button></li>
             <li><button onClick={() => scrollTo('areas')}>Coverage Across Bangalore</button></li>
@@ -72,13 +72,13 @@ export const Footer: React.FC = () => {
             <div className="f-item">
               <Phone size={18} className="f-icon" />
               <div>
-                <a href="tel:+919916388000">+91 99163 88000</a><br />
-                <a href="tel:+919916827658">+91 99168 27658</a>
+                <a href="tel:+91 99644 41471">+91 99644 41471</a><br />
+                <a href="tel:+91 99644 41472">+91 99644 41472</a>
               </div>
             </div>
             <div className="f-item">
               <Mail size={18} className="f-icon" />
-              <a href="mailto:support@blrsquad.com">support@blrsquad.com</a>
+              <a href="mailto:Info.com875@gmail.com">Info.com875@gmail.com</a>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
       {/* Copyright Bar */}
       <div className="footer-bottom-bar">
         <div className="blr-container bottom-bar-inner">
-          <p>© 2026 Bengaluru Squad Services Private Limited. All Rights Reserved.</p>
+          <p>© 2026 JTMS India Services Private Limited. All Rights Reserved.</p>
           <div className="bottom-policy-tags">
             <span>PSARA License No: KAR/BLR/SEC/2026</span>
             <span>•</span>

@@ -59,8 +59,8 @@ export const ContactSection: React.FC = () => {
               <div className="c-details">
                 <h4>24/7 Operations Helpline</h4>
                 <p>
-                  <a href="tel:+919916388000" className="phone-bold">+91 99163 88000</a><br />
-                  <a href="tel:+919916827658" className="phone-sub">+91 99168 27658</a>
+                  <a href="tel:+91 99644 41471" className="phone-bold">+91 99644 41471</a><br />
+                  <a href="tel:+91 99644 41472" className="phone-sub">+91 99644 41472</a>
                 </p>
                 <small>Round-the-clock emergency support & relief guard dispatch</small>
               </div>
@@ -73,7 +73,7 @@ export const ContactSection: React.FC = () => {
               <div className="c-details">
                 <h4>Official Correspondence</h4>
                 <p>
-                  <a href="mailto:support@blrsquad.com" className="email-link">support@blrsquad.com</a>
+                  <a href="mailto:Info.com875@gmail.com" className="email-link">Info.com875@gmail.com</a>
                 </p>
                 <small>Send tender documents, RFP proposals & corporate requisitions</small>
               </div>
@@ -126,7 +126,7 @@ export const ContactSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. 9916388000"
+                      placeholder="e.g. 9964441471"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />

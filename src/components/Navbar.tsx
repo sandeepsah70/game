@@ -26,13 +26,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             <span>Government Licensed (PSARA) • 100% Police Verified Guards in Bengaluru</span>
           </div>
           <div className="top-contact-links">
-            <a href="tel:+919916388000" className="top-phone-link">
+            <a href="tel:+91 99644 41471" className="top-phone-link">
               <Phone size={13} />
-              <span>24/7 Helpline: +91 99163 88000</span>
+              <span>24/7 Helpline: +91 99644 41471</span>
             </a>
             <span className="divider">|</span>
-            <a href="mailto:support@blrsquad.com" className="top-email-link">
-              support@blrsquad.com
+            <a href="mailto:Info.com875@gmail.com" className="top-email-link">
+              Info.com875@gmail.com
             </a>
           </div>
         </div>
@@ -57,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
           <div className="desktop-nav-links">
             <button onClick={() => scrollTo('hero')} className="nav-link">Home</button>
             <button onClick={() => scrollTo('services')} className="nav-link">Services</button>
-            <button onClick={() => scrollTo('why-us')} className="nav-link">Why BLR Squad</button>
+            <button onClick={() => scrollTo('why-us')} className="nav-link">Why JTMS</button>
             <button onClick={() => scrollTo('stats')} className="nav-link">Guards & Stats</button>
             <button onClick={() => scrollTo('testimonials')} className="nav-link">Reviews</button>
             <button onClick={() => scrollTo('areas')} className="nav-link">Coverage Areas</button>
@@ -66,13 +66,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
 
           {/* Right Action Call & Quote Button */}
           <div className="nav-right-actions">
-            <a href="tel:+919916388000" className="nav-phone-chip">
+            <a href="tel:+91 99644 41471" className="nav-phone-chip">
               <div className="phone-circle">
                 <Phone size={15} />
               </div>
               <div className="phone-meta">
                 <small>Quick Call</small>
-                <strong>+91 99163 88000</strong>
+                <strong>+91 99644 41471</strong>
               </div>
             </a>
 
@@ -112,8 +112,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               >
                 Request Security Assessment
               </button>
-              <a href="tel:+919916388000" className="btn-call-mobile">
-                <Phone size={16} /> Call +91 99163 88000
+              <a href="tel:+91 99644 41471" className="btn-call-mobile">
+                <Phone size={16} /> Call +91 99644 41471
               </a>
             </div>
           </div>

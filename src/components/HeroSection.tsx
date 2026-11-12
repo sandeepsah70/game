@@ -30,9 +30,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
               <span>Get Free Security Quote</span>
               <ArrowRight size={18} />
             </button>
-            <a href="tel:+919916388000" className="btn-hero-secondary">
+            <a href="tel:+91 99644 41471" className="btn-hero-secondary">
               <Phone size={17} />
-              <span>Call +91 99163 88000</span>
+              <span>Call +91 99644 41471</span>
             </a>
           </div>
 
@@ -65,7 +65,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
                 <Award size={24} className="award-gold" />
               </div>
               <div className="badge-meta">
-                <span className="badge-title">BLR SQUAD VIGILANCE</span>
+                <span className="badge-title">JTMS VIGILANCE</span>
                 <span className="badge-status">Active 24/7 Patrol Network</span>
               </div>
             </div>
@@ -99,9 +99,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuote }) => {
             <div className="card-quick-form">
               <span className="form-head-title">Need Guards Tomorrow?</span>
               <p className="form-sub">Speak directly with our Bengaluru Operations Head</p>
-              <a href="tel:+919916388000" className="btn-call-direct-card">
+              <a href="tel:+91 99644 41471" className="btn-call-direct-card">
                 <Phone size={16} />
-                <span>Instant Call: +91 99163 88000</span>
+                <span>Instant Call: +91 99644 41471</span>
               </a>
             </div>
           </div>
