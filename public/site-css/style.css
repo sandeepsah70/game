@@ -3582,7 +3582,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   /* risk cards: sprite thumbnail on top, copy below */
   .rk-card{
     --tw:min(calc(100vw - 37px),420px);--k:calc(var(--tw) / 290);
-    background-image:none!important;background-color:#0a0b10;
+    /* background-image:none */;background-color:#0a0b10;
     padding:calc(var(--k)*177 + 14px) 16px 18px!important;
   }
   .rk-card::before{
@@ -4113,9 +4113,9 @@ a[href="#"]:not(.ft-up){cursor:default}
   .rk-card[style*="--img"]::before{background-image:var(--img)!important;background-size:cover!important;background-position:center!important}
 }
 /* cards whose photo was removed in the admin (no crop vars, no photo) show no image */
-.os-card:not([style]) .os-photo:not([style*="--img"]){background-image:none!important}
-.rk-card:not([style*="--"]){background-image:none!important}
-@media (max-width:1000px){.rk-card:not([style*="--"])::before{background-image:none!important}}
+.os-card:not([style]) .os-photo:not([style*="--img"]){/* background-image:none */}
+.rk-card:not([style*="--"]){/* background-image:none */}
+@media (max-width:1000px){.rk-card:not([style*="--"])::before{/* background-image:none */}}
 
 /* ===== mobile gap fixes (scanned page by page at 390px) ===== */
 @media (max-width:1000px){
@@ -4253,15 +4253,15 @@ em,h1 em,h2 em,h3 em,h4 em{
   .svc-card img{top:14px!important;width:calc(100% - 24px)!important;max-width:150px;height:110px!important;left:50%!important;transform:translateX(-50%);object-fit:cover}
   .svc-card h3{top:138px!important;font-size:14px!important;line-height:19px!important;left:8px!important;right:8px!important;width:auto!important}
   .svc-card .bar{bottom:16px!important}
-  .csg-cta{background-image:none!important;padding:36px 16px!important}
+  .csg-cta{/* background-image:none */;padding:36px 16px!important}
   .csg-cta-in{max-width:100%!important}
 }
 
 /* ===== Mobile: hide photo banner above page titles on all inner pages ===== */
 @media (max-width:1000px){
-  .hero[class*="pg-"]{height:auto!important;min-height:0!important;background-image:none!important;background-color:#10181d!important}
+  .hero[class*="pg-"]{height:auto!important;min-height:0!important;/* background-image:none */;background-color:#10181d!important}
   .hero [class$="-ttl"],.hero [class$="-title"]{padding-top:36px!important}
-  .req,.dogabout{padding-top:40px!important;background-image:none!important}
+  .req,.dogabout{padding-top:40px!important;/* background-image:none */}
 }
 
 /* footer bottom bar (mobile): copyright, links and the back-to-top button stacked cleanly, nothing overlapping */
@@ -4414,4 +4414,78 @@ body:has(.navbar.open) .float-wrap,body:has(.navbar.open) .pw-btn,body:has(.navb
   margin: 0 !important;
   padding: 0 !important;
   pointer-events: none !important;
+}
+
+
+/* =========================================================================
+   ENHANCED IMAGES FOR OUR SERVICES AND RISK ASSESSMENT PROCESS
+   ========================================================================= */
+
+/* OUR SERVICES Cards: ensure the photo is always prominent, visible, and sharp */
+.os-photo {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 200px !important;
+  background-image: var(--img) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 12px 12px 0 0 !important;
+  border-bottom: 2px solid rgba(243,181,42,0.3) !important;
+}
+
+@media (max-width: 1000px) {
+  .os-photo {
+    height: 180px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+
+/* RISK ASSESSMENT PROCESS Cards: ensure background photo is clearly visible on both desktop & mobile */
+.rk-card, .rk-card[style*="--img"] {
+  position: relative !important;
+  background-image: var(--img, url("../uploads/legacy/cards/risk-1.webp")) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+  border: 2px solid rgba(243,181,42,0.55) !important;
+}
+
+.rk-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(135deg, rgba(8,11,18,0.78) 0%, rgba(12,18,30,0.68) 100%) !important;
+  z-index: 0 !important;
+}
+
+.rk-card > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+@media (max-width: 1000px) {
+  .rk-card {
+    background-image: var(--img) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 70px 16px 18px !important;
+  }
+  .rk-card::before {
+    background: linear-gradient(135deg, rgba(8,11,18,0.82) 0%, rgba(12,18,30,0.72) 100%) !important;
+  }
+}
+
+/* PRESS RELEASES Cards: clear, sharp photo presentation */
+.pr-photo {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
 }
